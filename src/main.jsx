@@ -4,15 +4,18 @@ import './index.css'
 import App from './App.jsx'
 import 'flowbite/dist/flowbite.min.js'
 import Authcontext from './components/context/Authcontext.jsx'
-import Tokencontext from './components/context/tokenContext.jsx'
+import Token from './components/context/Token.jsx'
+
+
+
 
 
 createRoot(document.getElementById('root')).render(
 
-<Tokencontext>
+<Token>
 <Authcontext>
     
     <App />
 </Authcontext>
-</Tokencontext>
+</Token>
 )

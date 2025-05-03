@@ -5,9 +5,10 @@ import Home from './pages/Home/Home'
 import Register from './pages/Register/Register'
 import Login from './pages/Login/Login'
 import Notfound from './pages/Notfound/Notfound'
-import { tokencontext } from './components/context/tokenContext'
+
 import Authview from './components/Auth/Authview'
 import ProtectedRoutes from './components/ProtectedRoutes/ProtectedRoutes'
+import { tokencontext } from './components/context/Token'
 
 export default function App() {
 const{settoken}=useContext(tokencontext)
