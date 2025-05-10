@@ -6,7 +6,7 @@ import { modalcontext } from "../../components/context/Modalcontext";
 import { notecontext } from "../../components/context/Nodecontext";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
-
+import logo1 from "../../assets/ChatGPT Image 10 مايو 2025، 08_26_24 م.png"
 export default function Home() {
   const [notes, setnotes] = useState([]);
   const { showModal ,setshowModal ,editnote ,seteditnote } = useContext(modalcontext);
@@ -53,11 +53,13 @@ export default function Home() {
   }, []);
   return (
     <>
-      <section className=" px-4 sm:px-24 py-10">
-        <h1 className="dark:text-white text-3xl font-serif font-bold mb-10">
+      <section className=" px-4 sm:px-24 ">
+       
+       {notes?.length!=0 ? 
+        <div className="py-8">
+         <h1 className="dark:text-white text-3xl font-serif font-bold mb-10 ">
           Notes
         </h1>
-       {notes?.length!=0 ?  
        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-6">
           {notes?.map((note) => (
             <div
@@ -114,8 +116,12 @@ export default function Home() {
               </div>
             </div>
           ))}
-        </div> : <>
-        <h1>dgdgggdsg</h1>
+        </div> </div> : <>
+        <div className=" ">
+<div className="flex justify-center items-center h-screen overflow-hidden">
+<img className="max-w-lg w-full " src={logo1} alt="" />
+</div>
+        </div>
         </>}
       </section>
       {showModal && <Modal editnote={editnote} userNote={userNote} />}
