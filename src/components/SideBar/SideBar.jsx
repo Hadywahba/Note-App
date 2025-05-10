@@ -74,7 +74,7 @@ export default function SideBar() {
         >
           <div className=" flex gap-3 flex-col pt-4   items-center justify-start  ">
             <button className="p-2 text-gray-900 rounded-lg dark:text-white">
-              <span className="ms-3 text-center cursor-default">Note </span>
+              <span className=" text-center cursor-default font-serif font-bold">ThinkUp </span>
             </button>
             <hr className=" border-gray-500 w-full mb-5" />
 
