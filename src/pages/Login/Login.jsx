@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import React, { useContext } from "react";
-import { useEffect } from "react";
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaLock } from "react-icons/fa";
@@ -10,16 +10,13 @@ import { MdNoteAlt } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import { z } from "zod";
 import { authcontext } from "../../components/context/Authcontext";
-
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 import { tokencontext } from "../../components/context/Token";
-
-
 export default function Login() {
   const [loginError, setloginError] = useState(null);
   const [loginLoading, setloginLoading] = useState(false);
-  const navigate = useNavigate()
-const{settoken}=useContext(tokencontext)
+  const navigate = useNavigate();
+  const { settoken } = useContext(tokencontext);
   const { getLoginFn } = useContext(authcontext);
   const schema = z.object({
     email: z.string().nonempty(" email is required"),
@@ -45,12 +42,11 @@ const{settoken}=useContext(tokencontext)
         title: "You are logged in successfully",
         showConfirmButton: false,
         timer: 1500,
-        
-        
+    
       });
-      localStorage.setItem('GetToken',data.token)
-      settoken(data.token)
-      navigate('/')
+      localStorage.setItem("GetToken", data.token);
+      settoken(data.token);
+      navigate("/");
       console.log(data);
     } catch (error) {
       setloginError(error.response.data.msg);
@@ -63,11 +59,11 @@ const{settoken}=useContext(tokencontext)
 
   return (
     <>
-      <div className="sm:ml-[82px]">
-        <div className="container mx-auto flex-grow px-6 sm:px-2 pb-1  py-16 ">
+      <div className="flex justify-center items-center min-h-screen ">
+        <div className="w-full max-w-xl  ">
           <form
             onSubmit={handleSubmit(userLogin)}
-            className="mx-auto max-w-[300px]   sm:max-w-md md:max-w-xl  rounded-md  bg-white dark:bg-gray-800 dark:shadow-sm dark:shadow-white   shadow-2xl px-4 sm:px-8 py-10 "
+            className="mx-auto max-w-[300px] auth   sm:max-w-md md:max-w-xl  rounded-md  bg-white dark:bg-gray-800 dark:shadow-sm dark:shadow-white   shadow-2xl px-4 sm:px-8 py-10 "
           >
             <div className="bookcircle  flex justify-center items-center">
               <div className="text-3xl flex bg-submain  dark:text-black dark:bg-main text-white justify-center items-center circle">
@@ -134,7 +130,9 @@ const{settoken}=useContext(tokencontext)
                   <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
                 </svg>
                 <span className="sr-only">Info</span>
-                <div className="text-white dark:text-black">{errors.email.message} </div>
+                <div className="text-white dark:text-black">
+                  {errors.email.message}{" "}
+                </div>
               </div>
             )}
             <div className="relative">
@@ -171,7 +169,9 @@ const{settoken}=useContext(tokencontext)
                   <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
                 </svg>
                 <span className="sr-only">Info</span>
-                <div className="text-white dark:text-black">{errors.password.message} </div>
+                <div className="text-white dark:text-black">
+                  {errors.password.message}{" "}
+                </div>
               </div>
             )}
 
@@ -179,9 +179,11 @@ const{settoken}=useContext(tokencontext)
               type="submit"
               className="text-white login flex justify-center items-center  bg-submain  hover:bg-main focus:outline-none  font-medium rounded-lg text-sm w-full  px-5 py-2.5 text-center dark:bg-main dark:hover:bg-submain dark:text-black hover:text-black hover:dark:text-white "
             >
-              {loginLoading?  <div className="flex justify-center items-center border-b-4 rounded-full w-6 h-6 border-gray-100 animate-spin"></div> :   <p> Submit</p>}
-             
-           
+              {loginLoading ? (
+                <div className="flex justify-center items-center border-b-4 rounded-full w-6 h-6 border-gray-100 animate-spin"></div>
+              ) : (
+                <p> Submit</p>
+              )}
             </button>
           </form>
         </div>

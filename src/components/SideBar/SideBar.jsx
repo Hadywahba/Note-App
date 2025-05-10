@@ -8,11 +8,11 @@ import { FaCirclePlus } from "react-icons/fa6";
 import { IoMdClose, IoMdCloseCircle, IoMdLogIn } from "react-icons/io";
 import { IoMoonSharp } from "react-icons/io5";
 import { NavLink, useNavigate } from "react-router-dom";
-
 import Swal from "sweetalert2";
 import { tokencontext } from "../context/Token";
-
+import { modalcontext } from "../context/Modalcontext";
 export default function SideBar() {
+  const { setshowModal ,seteditnote } = useContext(modalcontext);
   const ref = useRef(null);
   let [showoption, setshowoption] = useState(false);
   let [openSideBar, setopenSideBar] = useState(false);
@@ -65,12 +65,12 @@ export default function SideBar() {
       <aside
         className={`fixed top-0 left-0 z-40 w-full ${
           openSideBar ? "visible" : "hidden"
-        }  sm:w-20 sm:block   h-screen   transition-transform  bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700`}
+        }  sm:w-20 sm:block   h-screen   transition-transform  bg-white border border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700`}
         id="logo-sidebar"
         aria-label="Sidebar"
       >
         <div
-          className={`h-full    flex flex-col justify-between   overflow-y-auto bg-gray-200 dark:bg-gray-800`}
+          className={`h-full    flex flex-col justify-between   overflow-y-auto bg-white dark:bg-gray-800`}
         >
           <div className=" flex gap-3 flex-col pt-4   items-center justify-start  ">
             <button className="p-2 text-gray-900 rounded-lg dark:text-white">
@@ -84,7 +84,7 @@ export default function SideBar() {
                   <button
                     onClick={() => {
                       setshowoption(!showoption);
-                      setopenSideBar(false);
+                     
                     }}
                   >
                     <FaCirclePlus
@@ -95,7 +95,12 @@ export default function SideBar() {
                   </button>
 
                   <div
-                    onClick={() => setshowoption(false)}
+                    onClick={() => {
+                      setshowoption(false);
+                      setshowModal(true);
+                      setopenSideBar(false);
+                      seteditnote(null);
+                    }}
                     className={`text-white text-sm cursor-pointer  bg-slate-400 rounded-md p-1 ${
                       showoption ? "visible" : "hidden"
                     } `}
@@ -109,13 +114,17 @@ export default function SideBar() {
                 <NavLink
                   to={"register"}
                   className="text-3xl  text-black dark:text-white"
-                  onClick={()=>{  setopenSideBar(false);}}
+                  onClick={() => {
+                    setopenSideBar(false);
+                  }}
                 >
                   <BsPersonFillAdd />
                 </NavLink>
                 <NavLink
                   to={"login"}
-                  onClick={()=>{  setopenSideBar(false);}}
+                  onClick={() => {
+                    setopenSideBar(false);
+                  }}
                   className="text-3xl text-black dark:text-white "
                 >
                   <IoMdLogIn />
@@ -155,12 +164,9 @@ export default function SideBar() {
           </div>
         </div>
       </aside>
-      <div className="p-4 sm:ml-64"></div>
 
-
-      
       <nav className="fixed top-0 z-50 w-full  ">
-        <div className="px-3 py-3 lg:px-5 lg:pl-3">
+        <div className="px-3  lg:px-5 lg:pl-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-start rtl:justify-end">
               <button
