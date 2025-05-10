@@ -340,7 +340,7 @@ export default function Register() {
             </p>
             <Link
               className="pl-3 text-main dark:text-submain text-xs sm:text-xl"
-              to={"login"}
+              to={"/login"}
             >
               Sign in
             </Link>
