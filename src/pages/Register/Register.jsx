@@ -58,11 +58,11 @@ export default function Register() {
   };
 
   return (
-    <div className="   dark:text-white flex justify-center items-center min-h-screen ">
-      <div className=" w-full max-w-xl ">
+    <div className="   dark:text-white flex justify-center items-center min-h-screen overflow-hidden  ">
+      <div className=" w-full max-w- md:max-w-xl py-14 px-6 xl:py-0 ">
         <form
           onSubmit={handleSubmit(getRegister)}
-          className="mx-auto max-w-[300px] auth   sm:max-w-md md:max-w-xl  rounded-md  bg-white dark:bg-gray-800 dark:shadow-sm dark:shadow-white   shadow-2xl px-4 sm:px-8 "
+          className="mx-auto max-w-[300px] py-4    sm:max-w-md md:max-w-xl  rounded-xl  bg-white dark:bg-gray-800 dark:shadow-sm dark:shadow-white   shadow-2xl px-4 sm:px-8 "
         >
           <div className="bookcircle  flex justify-center items-center">
             <div className="text-3xl flex bg-submain dark:text-black dark:bg-main text-white  justify-center items-center circle">
@@ -326,7 +326,7 @@ export default function Register() {
               <div className="flex justify-center items-center h-8 w-8  border-gray-100 rounded-full border-b-3 animate-spin"></div>
             ) : (
               <>
-                <p className=""> Create an Account</p>
+                <p className="text-xs sm:text-base"> Create an Account</p>
 
                 <div className="pl-3 ">
                   <FaLongArrowAltRight />
