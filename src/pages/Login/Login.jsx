@@ -56,15 +56,15 @@ export default function Login() {
       setloginLoading(false);
     }
   };
-  useEffect(() => {
-    document.body.style.overflow='hidden';
-    return()=>{
-      document.body.style.overflow='auto';
-    }
-  
-   
-  }, [])
-  
+   useEffect(() => {
+      document.body.style.overflow='hidden';
+      return()=>{
+        document.body.style.overflow='auto';
+      }
+    
+     
+    }, [])
+    
 
   return (
     <>
@@ -139,7 +139,7 @@ export default function Login() {
                   <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
                 </svg>
                 <span className="sr-only">Info</span>
-                <div className="text-white dark:text-black">
+                <div className="text-white text-xs md:text-sm dark:text-black">
                   {errors.email.message}{" "}
                 </div>
               </div>
@@ -155,7 +155,7 @@ export default function Login() {
                 type="password"
                 id="password"
                 class="bg-gray-50 border mb-4 border-gray-300 px-8 text-gray-900 text-sm rounded-lg focus:ring-main focus:border-main block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-main dark:focus:border-main focus:outline-none"
-                placeholder="Enter your pass"
+                placeholder="Enter your password"
                 required
                 {...register("password")}
               />
@@ -178,7 +178,7 @@ export default function Login() {
                   <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
                 </svg>
                 <span className="sr-only">Info</span>
-                <div className="text-white dark:text-black">
+                <div className="text-white text-xs md:text-sm dark:text-black">
                   {errors.password.message}{" "}
                 </div>
               </div>
