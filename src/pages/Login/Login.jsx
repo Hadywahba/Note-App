@@ -106,7 +106,7 @@ export default function Login() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border mb-4  border-gray-300 px-8 text-gray-900 text-sm rounded-lg focus:ring-main focus:border-main block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-main dark:focus:border-main focus:outline-none"
-                placeholder="Enter your name"
+                placeholder="Enter your email"
                 required
                 {...register("email")}
               />
@@ -146,7 +146,7 @@ export default function Login() {
                 type="password"
                 id="password"
                 class="bg-gray-50 border mb-4 border-gray-300 px-8 text-gray-900 text-sm rounded-lg focus:ring-main focus:border-main block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-main dark:focus:border-main focus:outline-none"
-                placeholder="Enter your name"
+                placeholder="Enter your pass"
                 required
                 {...register("password")}
               />

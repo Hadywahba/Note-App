@@ -65,7 +65,7 @@ export default function SideBar() {
       <aside
         className={`fixed top-0 left-0 z-40 w-full ${
           openSideBar ? "visible" : "hidden"
-        }  sm:w-20 sm:block   h-screen   transition-transform  bg-white border border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700`}
+        }  sm:w-20 sm:block   h-full   transition-transform  bg-white border border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700`}
         id="logo-sidebar"
         aria-label="Sidebar"
       >
