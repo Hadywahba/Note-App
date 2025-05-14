@@ -15,9 +15,7 @@ transition: 0.5s all;
       
    
 }
-body , html{
-  overflow-y: hidden;
-}
+
 .bookcircle:hover .circle{
   transform: rotate(360deg) scale(1.4);
   

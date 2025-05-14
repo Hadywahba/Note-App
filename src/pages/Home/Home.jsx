@@ -43,6 +43,15 @@ export default function Home() {
       
     }
   }
+   useEffect(() => {
+      document.body.style.overflow='hidden';
+      return()=>{
+        document.body.style.overflow='auto';
+      }
+    
+     
+    }, [])
+    
   
   const handlebutton=(note)=>{
     setshowModal(true)
@@ -51,6 +60,7 @@ export default function Home() {
   useEffect(() => {
     userNote();
   }, []);
+  
   return (
     <>
       <section className=" px-4 sm:px-24 ">

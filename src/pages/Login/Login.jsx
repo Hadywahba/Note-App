@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -56,6 +56,15 @@ export default function Login() {
       setloginLoading(false);
     }
   };
+  useEffect(() => {
+    document.body.style.overflow='hidden';
+    return()=>{
+      document.body.style.overflow='auto';
+    }
+  
+   
+  }, [])
+  
 
   return (
     <>

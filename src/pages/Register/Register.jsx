@@ -58,8 +58,8 @@ export default function Register() {
   };
 
   return (
-    <div className="   dark:text-white flex justify-center items-center min-h-screen overflow-hidden  ">
-      <div className=" w-full max-w- md:max-w-xl  px-6 xl:py-0 ">
+    <div className="   dark:text-white flex justify-center items-center min-h-dvh overflow-hidden  ">
+      <div className=" w-full max-w- md:max-w-xl py-8 px-6 xl:py-0 ">
         <form
           onSubmit={handleSubmit(getRegister)}
           className="mx-auto max-w-[300px] py-4    sm:max-w-md md:max-w-xl  rounded-xl  bg-white dark:bg-gray-800 dark:shadow-sm dark:shadow-white   shadow-2xl px-4 sm:px-8 "

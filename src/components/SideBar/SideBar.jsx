@@ -60,6 +60,15 @@ export default function SideBar() {
       }
     });
   };
+   useEffect(() => {
+      document.body.style.overflow='hidden';
+      return()=>{
+        document.body.style.overflow='auto';
+      }
+    
+     
+    }, [])
+    
   return (
     <div className={``}>
       <aside
